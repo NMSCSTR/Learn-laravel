@@ -34,7 +34,7 @@ class NoteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Note $note)
+    public function show(Note $id)
     {
         return 'show';
     }
