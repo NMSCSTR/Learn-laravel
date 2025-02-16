@@ -3,12 +3,16 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Note;
+use App\Models\User;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Note>
+ * @extends Factory<Note>
  */
 class NoteFactory extends Factory
 {
+    protected $model = Note::class; // Ensure the correct model is used
+
     /**
      * Define the model's default state.
      *
@@ -18,7 +22,7 @@ class NoteFactory extends Factory
     {
         return [
             'note' => fake()->realText(2000),
-            'user_id' => 1
+            'user_id' => User::inRandomOrder()->value('id') ?? User::factory(), // Assigns an existing user or creates one
         ];
     }
 }

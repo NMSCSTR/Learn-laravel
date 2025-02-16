@@ -1,3 +1,3 @@
-<div>
+<x-layout>
     Edit
-</div>
+</x-layout>

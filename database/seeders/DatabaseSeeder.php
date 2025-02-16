@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Note;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,16 +13,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create 10 random users
+        User::factory(10)->create();
 
+        // Ensure there is a default test user
         User::factory()->create([
-            'id' => 1,
+            'id' => 1, // Laravel might override this, so be cautious
             'name' => 'Test User',
             'email' => 'test@example.com',
-            'password' => bcrypt('pass123') // Corrected function name
+            'password' => bcrypt('pass123'),
         ]);
-        
 
+        // Generate 100 notes linked to existing users
         Note::factory(100)->create();
     }
 }
