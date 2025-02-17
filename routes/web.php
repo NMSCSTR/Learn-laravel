@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'welcome'])->name('welcome');
 
-Route::resource('note', NoteController::class);
+// Route::resource('note', NoteController::class);
+
 Route::get('/note', [NoteController::class, 'index'])->name('note.index');
 Route::get('/note/create', [NoteController::class, 'create'])->name('note.create');
 Route::post('/note', [NoteController::class, 'store'])->name('note.store');
