@@ -10,9 +10,9 @@
                         {{ Str::words($note->note, 30) }}
                     </div>
                     <div class="note-buttons">
-                        <a href="{{ rout('note.view') }}" class="note-edit-button">View</a>
-                        <a href="{{ rout('note.edit') }}" class="note-edit-button">Edit</a>
-                        <a href="{{ rout('note.delete') }}" class="note-delete-button">Delete</a>
+                        <a href="{{ route('note.show', $note) }}" class="note-edit-button">View</a>
+                        <a href="{{ route('note.edit', $note) }}" class="note-edit-button">Edit</a>
+                        <a href="" class="note-delete-button">Delete</a>
                     </div>
                 </div>                
             @endforeach
