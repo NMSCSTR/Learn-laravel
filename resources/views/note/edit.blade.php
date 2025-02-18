@@ -6,7 +6,7 @@
             <div class="note-buttons">
                 <a href="{{ route('note.index') }}" class="note-cancel-button">Cancel</a>
                 <buttonc class="note-submit-button">Submit</button>
-            </div>22
+            </div>
         </form>
     </div>
 </x-layout>

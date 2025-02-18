@@ -43,7 +43,7 @@ class NoteController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     */
+     */ 
     public function edit(Note $note)
     {
         return view('note.edit', ['note' => $note]);
