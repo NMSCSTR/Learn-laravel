@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notes', function (Blueprint $table) {
+        Schema::create('task_models', function (Blueprint $table) {
             $table->id();
-            $table->longtext('note');
-            $table->foreignId('user_id')->constrained('users'); //foreignkey
-            
             $table->timestamps();
-            
         });
     }
 
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('task_models');
     }
 };
